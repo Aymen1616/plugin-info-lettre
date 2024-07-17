@@ -1,0 +1,23 @@
+.mpp-pop-up{
+bottom: 50px;
+position: fixed;
+padding: 25px 50px;
+right:50px;
+transition: bottom 5s ease;
+background-color: aqua;
+z-index: 10;
+
+
+    &.mpp-pop-up--ferme{
+        bottom: -150px;
+    }
+
+    &.mpp-pop-up--ouvert{
+        bottom: 50px;
+    }
+
+    p{
+        letter-spacing: 0.3em;
+        font-size: 1.2em;
+    }
+}
