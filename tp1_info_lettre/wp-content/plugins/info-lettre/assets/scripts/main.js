@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded',function(){
-    const elPopup = document.querySelector('[data-js-mpp-pop-up]');
-    // this.setTimeout(function(){
-    //     elPopup.classList.replace('mpp-pop-up--ferme','mpp-pop-up--ouvert')
-    // },1000)
+    const elPopup = document.querySelector('[data-js-il-pop-up]');
+    this.setTimeout(function(){
+        elPopup.classList.replace('il-pop-up--ferme','il-pop-up--ouvert')
+    },1000)
 });

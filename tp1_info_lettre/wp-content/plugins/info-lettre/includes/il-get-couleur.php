@@ -1,10 +1,10 @@
 <?php
 /**
- * Retourne le parametre couleur_bg
+ * Retourne tous les parametres 
  */
 function il_get_couleur(){
     global $wpdb;
 
-    $resultat = $wpdb->get_var("SELECT couleur_bg FROM ".IL_PARAMETRES." WHERE id=1");
+    $resultat = $wpdb->get_var("SELECT * FROM ".IL_PARAMETRES." WHERE id=1");
     return $resultat;
 }

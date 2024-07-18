@@ -3,8 +3,8 @@
  * ajoute le panneau du pluggin dans l interface admin
  */
 function il_ajouter_menu() {
-    add_menu_page('Mon Premier Plugin',// Page title
-        'Mon Premier Plugin',// Menu title
+    add_menu_page('Info Lettre',// Page title
+        'Info Lettre',// Menu title
         'manage_options',// Capability
         'il-menu-page',// Menu slug
         'il_ajouter_formulaire'          // Callable function   

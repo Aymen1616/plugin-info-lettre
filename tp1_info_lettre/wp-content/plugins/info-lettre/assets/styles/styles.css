@@ -1,4 +1,4 @@
-.mpp-pop-up{
+.il-pop-up{
 bottom: 50px;
 position: fixed;
 padding: 25px 50px;
@@ -8,11 +8,11 @@ background-color: aqua;
 z-index: 10;
 
 
-    &.mpp-pop-up--ferme{
+    &.il-pop-up--ferme{
         bottom: -150px;
     }
 
-    &.mpp-pop-up--ouvert{
+    &.il-pop-up--ouvert{
         bottom: 50px;
     }
 
