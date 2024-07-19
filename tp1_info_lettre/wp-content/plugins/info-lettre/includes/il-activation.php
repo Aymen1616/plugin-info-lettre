@@ -31,8 +31,8 @@ function il_activation(){
     if($wpdb->get_var( "SHOW TABLES LIKE '$table_inscriptions'") != $table_inscriptions){
         $sql = "CREATE TABLE $table_inscriptions (
                     id int NOT NULL AUTO_INCREMENT,
-                    nom varchar(50)  NOT NULL,
-                    courriel varchar(50)  NOT NULL,
+                    nom_client varchar(50)  NOT NULL,
+                    courriel_client varchar(50)  NOT NULL,
                     PRIMARY KEY (id)
             ) $charset_collate;";
         

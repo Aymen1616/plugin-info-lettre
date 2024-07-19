@@ -58,4 +58,4 @@ register_deactivation_hook( __FILE__, 'il_deactivation' );
 require_once(plugin_dir_path(__FILE__).'includes/il-panneau-admin.php');
 
 
-// require_once(plugin_dir_path(__FILE__).'includes/il-modal-client.php');
+require_once(plugin_dir_path(__FILE__).'includes/il-modal-client.php');

@@ -97,8 +97,8 @@ function il_afficher_inscriptions() {
         // Afficher chaque inscription dans une ligne du tableau
         foreach ($inscriptions as $inscription) {
             echo '<tr>';
-            echo '<td>' . esc_html($inscription->nom) . '</td>';
-            echo '<td>' . esc_html($inscription->courriel) . '</td>';
+            echo '<td>' . esc_html($inscription->nom_client) . '</td>';
+            echo '<td>' . esc_html($inscription->courriel_client) . '</td>';
             echo '</tr>';
         }
 

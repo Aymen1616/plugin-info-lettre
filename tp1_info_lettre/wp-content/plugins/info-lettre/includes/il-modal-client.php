@@ -1,8 +1,10 @@
 <?php
 function charge_popup(){
 
-    require_once('il-get-couleur.php');
-    $il_couleur_bg = il_get_info();
+    require_once('il-get-infos.php');
+    $il_infos = il_get_info();
+    $il_couleur_bg = $il_infos->couleur_bg;
+    $il_couleur_txt = $il_infos->couleur_txt;
     ob_start();
     include( dirname(plugin_dir_path( __FILE__ ) ) . '/templates/il-pop-up.php' );
     $template = ob_get_clean();
@@ -22,21 +24,24 @@ function il_nouvelle_inscription() {
     
     if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         
-        if ( !empty( $_POST['il-courriel'] ) ) {
+        if ( !empty( $_POST['il-courriel-client'] ) || !empty( $_POST['il-nom-client'] )) {
             echo 'test';
 
             global $wpdb;
 
-            $il_courriel = sanitize_email( $_POST['il-courriel'] );
-
+            $il_nom = sanitize_text_field( $_POST['il-nom-client'] );
+            $il_courriel = sanitize_email( $_POST['il-courriel-client'] );
+            
             $wpdb->insert( IL_INSCRIPTIONS,
                 array(
-                    'courriel' => $il_courriel
+                    'nom_client'=>$il_nom,
+                    'courriel_client' => $il_courriel
                 ), array(
-                    '%s'        // $format (optionnel) => string
+                    '%s' ,
+                    '%s'   // $format (optionnel) => string
                 )
             );
-
+            $wpdb->print_error();
             /**
              * Rafraîchi la page pour faire la communication client serveur
              * Détruit la variable spécifiée

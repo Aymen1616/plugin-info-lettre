@@ -22,7 +22,7 @@ z-index: 10;
     }
 }
 
-form{
+#formulaire-inscription{
     margin-top:25px
 }
 
@@ -48,4 +48,90 @@ th {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+
+#formulaire-inscription .groupe-champs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    grid-area: input;
+}
+
+#formulaire-inscription input {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 2px solid tomato;
+    outline: none;
+    width: 100%;
+}
+
+form input[type="submit"],
+form button,
+form .bouton {
+    padding: 0.5rem;
+    background-color: tomato;
+    color: white;
+    cursor: pointer;
+    transition: all 350ms;
+    width: fit-content;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.25rem;
+}
+form label {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+    background-color: color-mix(in oklab, tomato, black 10%);
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+form input[type="submit"]:disabled,
+form button:disabled {
+    background-color: grey;
+    pointer-events: none;
+}
+
+form input:invalid {
+    border-color: red;
+}
+
+form input:valid {
+    border-color: green;
+}
+
+form section {
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid tomato;
+    display: grid;
+    grid: "header header input input input input input input nav nav";
+    /* grid-auto-flow: column; */
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+form section nav {
+    grid-column: 1 / -1;
+    text-align: center;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    grid-area: nav;
+}
+
+.invisible {
+    display: none;
 }
