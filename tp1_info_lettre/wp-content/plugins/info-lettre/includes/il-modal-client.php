@@ -2,7 +2,7 @@
 function charge_popup(){
 
     require_once('il-get-couleur.php');
-    $il_couleur_bg = il_get_couleur();
+    $il_couleur_bg = il_get_info();
     ob_start();
     include( dirname(plugin_dir_path( __FILE__ ) ) . '/templates/il-pop-up.php' );
     $template = ob_get_clean();
