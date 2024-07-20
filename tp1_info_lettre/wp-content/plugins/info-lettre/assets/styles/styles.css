@@ -1,63 +1,65 @@
-.il-pop-up{
-bottom: 50px;
-position: fixed;
-padding: 25px 50px;
-right:50px;
-transition: bottom 5s ease;
-background-color: aqua;
-z-index: 10;
+.il-pop-up {
+    bottom: 10px;
+    position: fixed;
+    padding: 5px 50px;
+    right: 10px;
+    background-color: var(--il-couleur-bg);
+    color: var(--il-couleur-txt);
+    z-index: 10;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 
 
-    &.il-pop-up--ferme{
-        bottom: -150px;
+    &.il-pop-up--ferme {
+        opacity: 0;
+        visibility: hidden;
     }
 
-    &.il-pop-up--ouvert{
-        bottom: 50px;
+    &.il-pop-up--ouvert {
+        opacity: 1;
+        height: auto; 
     }
 
-    p{
-        letter-spacing: 0.3em;
-        font-size: 1.2em;
-    }
 }
 
-#formulaire-inscription{
-    margin-top:25px
+.modal-config input{
+    margin-bottom: 1rem; 
 }
-
+#formulaire-inscription {
+    margin-top: 25px
+}
 table {
-    width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ddd;
 }
 
-th, td {
+th,
+td {
     text-align: left;
-    padding: 8px;
+    padding: 16px;
 }
 
 th {
-    background-color: #4CAF50;
-    color: white;
+    color: black;
 }
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-
 #formulaire-inscription .groupe-champs {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; 
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-end; 
+    align-items: center; 
     width: 100%;
     grid-area: input;
 }
@@ -67,7 +69,7 @@ tr:nth-child(even) {
     border-radius: 0.25rem;
     border: 2px solid tomato;
     outline: none;
-    width: 100%;
+    max-width: 100%;
 }
 
 form input[type="submit"],
@@ -83,6 +85,7 @@ form .bouton {
     border: none;
     border-radius: 0.25rem;
 }
+
 form label {
     font-size: 1.25rem;
     font-weight: bold;
@@ -95,28 +98,11 @@ form button:hover {
     text-decoration: underline;
 }
 
-form input[type="submit"]:disabled,
-form button:disabled {
-    background-color: grey;
-    pointer-events: none;
-}
-
-form input:invalid {
-    border-color: red;
-}
-
-form input:valid {
-    border-color: green;
-}
-
 form section {
     margin: 0 auto;
     padding: 1rem;
-    border: 1px solid tomato;
     display: grid;
     grid: "header header input input input input input input nav nav";
-    /* grid-auto-flow: column; */
-    /* grid-template-rows: repeat(3, 1fr); */
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
@@ -130,6 +116,14 @@ form section nav {
     align-items: center;
     margin-top: auto;
     grid-area: nav;
+}
+
+.fermer-popup {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--il-couleur-txt);
 }
 
 .invisible {

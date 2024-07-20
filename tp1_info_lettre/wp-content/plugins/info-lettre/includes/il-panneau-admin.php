@@ -13,8 +13,7 @@ function il_ajouter_menu() {
 add_action( 'admin_menu', 'il_ajouter_menu' );
 
 
-
-
+/**fonction qui ajoute le formulaire au panneau admin */
 function il_ajouter_formulaire() {
         // S'il y a un query string nom, ajoute sa valeur à la db  
         if ( isset($_POST['il-couleur-bg']) || isset($_POST['il-couleur-txt']) || isset($_POST['il-titre']) || isset($_POST['il-nom']) || isset($_POST['il-courriel']) || isset($_POST['il-suivant']) || isset($_POST['il-soumettre']) ) {
@@ -25,7 +24,7 @@ function il_ajouter_formulaire() {
     $il_infos = il_get_info();
     echo '<div>
         <h1>' . get_admin_page_title() . '</h1>
-        <form method="post">
+        <form method="post" class = "modal-config">
             <label for="il-couleur-bg">Couleur du fond :</label>
             <input type="color" id="il-couleur-bg" name="il-couleur-bg" value = "'.esc_attr($il_infos->couleur_bg).'">
             <br>
@@ -51,11 +50,12 @@ function il_ajouter_formulaire() {
         </form>
     </div>';  
 
-           // Afficher les inscriptions
-    il_afficher_inscriptions();
-     }
+        // Afficher les inscriptions
+        il_afficher_inscriptions();
+}
 
      
+/**fonction qui met a jour les donnes du formulaire du panneau admin */
 function il_update_data(){
     global $wpdb;
 
@@ -81,19 +81,16 @@ function il_update_data(){
 }
 
 
+/**fonction qui affiche les usagers inscris s'ils existent dans le panneau admin */
 function il_afficher_inscriptions() {
     global $wpdb;
-
     // Récupérer les inscriptions de la base de données
     $inscriptions = $wpdb->get_results("SELECT * FROM " . IL_INSCRIPTIONS);
-
     // Vérifier s'il y a au moins une inscription
     if (!empty($inscriptions)) {
-        echo '<h2>Inscriptions à l\'infolettre</h2>';
-
+        echo '<h1>Usagers inscris à l\'infolettre</h1>';
         echo '<table>';
         echo '<tr><th>Nom</th><th>Courriel</th></tr>';
-
         // Afficher chaque inscription dans une ligne du tableau
         foreach ($inscriptions as $inscription) {
             echo '<tr>';
@@ -101,7 +98,6 @@ function il_afficher_inscriptions() {
             echo '<td>' . esc_html($inscription->courriel_client) . '</td>';
             echo '</tr>';
         }
-
         echo '</table>';
     }
 }
