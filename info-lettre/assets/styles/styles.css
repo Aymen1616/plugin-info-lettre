@@ -1,0 +1,131 @@
+.il-pop-up {
+    bottom: 10px;
+    position: fixed;
+    padding: 5px 50px;
+    right: 10px;
+    background-color: var(--il-couleur-bg);
+    color: var(--il-couleur-txt);
+    z-index: 10;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+
+
+    &.il-pop-up--ferme {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.il-pop-up--ouvert {
+        opacity: 1;
+        height: auto; 
+    }
+
+}
+
+.modal-config input{
+    margin-bottom: 1rem; 
+}
+#formulaire-inscription {
+    margin-top: 25px
+}
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 16px;
+}
+
+th {
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#formulaire-inscription .groupe-champs {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-end; 
+    align-items: center; 
+    width: 100%;
+    grid-area: input;
+}
+
+#formulaire-inscription input {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 2px solid tomato;
+    outline: none;
+    max-width: 100%;
+}
+
+form input[type="submit"],
+form button,
+form .bouton {
+    padding: 0.5rem;
+    background-color: tomato;
+    color: white;
+    cursor: pointer;
+    transition: all 350ms;
+    width: fit-content;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+form label {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+    background-color: color-mix(in oklab, tomato, black 10%);
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+form section {
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    grid: "header header input input input input input input nav nav";
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+form section nav {
+    grid-column: 1 / -1;
+    text-align: center;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    grid-area: nav;
+}
+
+.fermer-popup {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--il-couleur-txt);
+}
+
+.invisible {
+    display: none;
+}
